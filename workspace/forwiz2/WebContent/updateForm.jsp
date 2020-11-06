@@ -86,8 +86,8 @@ margin-top: 100px;
 						onclick = "${memberSession.admin eq 'AUTH_ADMIN'?'':'return false;'}"></td>
 						
 				<td width="100"><p align="right">직급</td>
-				<td width="400"><select name="position" id="position" onclick = "${memberSession.admin eq 'AUTH_ADMIN'?'':'preVal = this.value;'}">
-						<%--  onchange = "${memberSession.admin eq 'AUTH_ADMIN'?'':'alert('권한이 없습니다.'); this.value = preVal;'}" --%>
+				<td width="400"><select name="position" id="position" onclick = "${memberSession.admin eq 'AUTH_ADMIN'?'':'preVal = this.value;'}"
+						onchange = "${memberSession.admin eq 'AUTH_ADMIN'?'':'this.value = preVal;'}">
 						<option value="P10" ${member.position eq '대표이사'?'selected':'' }>대표이사</option>
 						<option value="P09" ${member.position eq '부사장'?'selected':'' }>부사장</option>
 						<option value="P08" ${member.position eq '전무'?'selected':'' }>전무</option>
@@ -107,8 +107,8 @@ margin-top: 100px;
 				<td width="100"><p align="right">부서</td>
 				
 				<td width="400"><p>
-						<select name="dept" onclick = "${memberSession.admin eq 'AUTH_ADMIN'?'':'preVal = this.value;'}">
-						<%-- onchange = "${memberSession.admin eq 'AUTH_ADMIN'?'':'alert('권한이 없습니다.'); this.value = preVal;'}" --%>
+						<select name="dept" onclick = "${memberSession.admin eq 'AUTH_ADMIN'?'':'preVal = this.value;'}"
+							onchange = "${memberSession.admin eq 'AUTH_ADMIN'?'':'this.value = preVal;'}">
 							<option value="D10" ${member.dept eq '대표이사'?'selected':'' }>대표이사</option>
 							<option value="D09" ${member.dept eq '경영지원본부'?'selected':'' }>경영지원본부</option>
 							<option value="D08" ${member.dept eq '전략사업본부'?'selected':'' }>전략사업본부</option>
